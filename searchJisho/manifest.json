@@ -1,0 +1,33 @@
+{
+  "name": "Search in Jisho.org",
+  "description": "Search Jisho.org and can access with a shortcut. Right-click on selected text and choose 'Search Jisho'.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "scripting"  
+  ],
+  "icons": {
+    "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "searchInJisho": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+X",
+        "mac": "MacCtrl+Shift+X"
+      },
+      "description": "Search in Jisho.org Command"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
